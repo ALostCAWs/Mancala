@@ -13,7 +13,7 @@
 
 Collect the most stones by the games' end
 
-  
+
 ### Rules
 
   - There are 48 stones in total
@@ -24,8 +24,8 @@ Collect the most stones by the games' end
       - The opponents goal pocket is skipped over, if it is reached
   - If the last piece is dropped into an empty pocket on the players' side, any pieces in the pocket opposite to it are captured
       - Captured pieces are placed in the players' goal pocket
-      
-      
+
+
 ### End
 
 The game ends when all 6 pockets on one of the players' sides are empty
@@ -33,9 +33,8 @@ The game ends when all 6 pockets on one of the players' sides are empty
 
 
 
+
 ### TODO:
 
-  - Fix current issue in display of the site
-      - Currently cuts off at the top
-  - Improve overall design of the games' board / pockets 
+  - Improve overall design of the games' board / pockets
   - Allow easier access for mobile users

@@ -1,0 +1,244 @@
+/*
+    display
+  flex / position
+  overflow
+    margin / padding
+  width / height
+  border
+    color
+    font
+    animation
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  background-color: #232931;
+  font-family: "Montserrat", sans-serif;
+  color: #f5f5f3;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5em 0;
+  min-height: 15vh;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(23, 27, 30);
+  text-transform: uppercase;
+}
+
+a {
+  color: #f5f5f3;
+  text-decoration: none;
+}
+
+nav > a:first-of-type {
+  margin-left: 3em;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 3em;
+}
+
+nav > ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f5f5f3;
+  transition: width 0.3s;
+}
+
+nav > ul li:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+nav > ul a {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+body > article:first-of-type,
+body > article:first-of-type:not([class="intro"]) {
+  margin-top: 10em;
+}
+
+.intro {
+  margin: auto;
+  width: 70%;
+}
+
+.intro h1 {
+  margin-bottom: 0.3em;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+.intro h2 {
+  margin-bottom: 0.3em;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.intro h3 {
+  margin-bottom: 2em;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.intro p {
+  margin-bottom: 0.5em;
+  letter-spacing: 1px;
+}
+
+body > article:not([class="intro"]) {
+  margin: 0 auto;
+  margin-top: 4em;
+  margin-bottom: 10em;
+  max-width: 100%;
+  text-align: center;
+}
+
+body > article:not([class="intro"]) h1,
+body > article:not([class="intro"]) h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body > article:not([class="intro"]) h2 + h3 {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  font-size: 16px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body > article:not([class="intro"]) h2 + p {
+  margin: auto;
+  margin-top: 2em;
+  width: 50%;
+  letter-spacing: 1px;
+}
+
+article > article {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  width: 100%;
+}
+
+article > div + div {
+  min-width: 50%;
+  max-width: 50%;
+  text-align: left;
+}
+
+article > div + div h3 a {
+  color: #4ecca3;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+article > div + div h4 {
+  margin-top: 1em;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+article > div + div p {
+  margin-top: 2em;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+article > div + div a {
+  padding: 0.3em;
+  border: 2px solid #4ecca3;
+}
+
+article > div + div h3 a:hover,
+article > div + div a:hover {
+  color: #232931;
+  background-color: #4ecca3;
+}
+
+.thumb {
+  position: relative;
+  margin-left: 2em;
+  margin-right: 2em;
+  width: 300px;
+  height: 300px;
+  clip-path: polygon(50% 2%, 0% 70%, 100% 70%);
+  background: #f5f5f3;
+  transition: transform 1s;
+}
+
+.thumb .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #4ecca3;
+  color: #4ecca3;
+  text-align: center;
+}
+
+.thumb:hover .overlay {
+  display: block;
+  background: rgba(34, 41, 49, 0.822);
+}
+
+.thumb-txt {
+  margin-top: 40%;
+  border: 2px solid #4ecca3;
+  text-transform: uppercase;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 80%;
+}
+
+.gallery img {
+  margin-bottom: 1.5em;
+  max-height: 30%;
+  max-width: 30%;
+}

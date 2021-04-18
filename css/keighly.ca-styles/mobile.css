@@ -1,0 +1,141 @@
+/* Ensure navbar items look normal at smaller widths on non-mobile devices */
+@media screen and (max-width: 1350px) {
+   nav {
+      flex-direction: column;
+      padding: 1.5em 0;
+   }
+
+   nav>a:first-of-type,
+   nav li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      align-self: start;
+   }
+
+   nav>a:first-of-type {
+      margin-top: 1em;
+      margin-bottom: 1.2em;
+   }
+
+   nav>ul li {
+      margin: 1.5em;
+      margin-bottom: -2em;
+   }
+
+   body>article:first-of-type,
+   body>article:first-of-type:not([class=intro]) {
+      margin-top: 14em;
+   }
+
+   article>div+div {
+      margin-left: 2em;
+      width: 60%
+   }
+}
+
+@media screen and (max-width: 850px) {
+   article>article {
+      flex-flow: column wrap;
+   }
+
+   article>div+div {
+      margin: auto;
+      text-align: center;
+   }
+
+   .thumb {
+      margin: auto;
+      width: 250px;
+      height: 250px;
+   }
+}
+
+@media screen and (max-width: 750px) {
+   .gallery img {
+      min-width: 75%;
+      max-width: 75%;
+      margin-top: 2em;
+   }
+}
+
+@media screen and (max-width: 550px) {
+   nav>ul li {
+      margin: .5em;
+      margin-bottom: -7em;
+   }
+
+   nav>ul a {
+      font-size: 12px;
+   }
+
+   body>article:first-of-type,
+   body>article:first-of-type:not([class=intro]) {
+      margin-top: 12em;
+   }
+
+   article>div+div {
+      max-width: 100%;
+   }
+
+   article>div+div h3 a {
+      font-size: 20px;
+   }
+
+   .thumb {
+      width: 200px;
+      height: 200px;
+   }
+}
+
+@media screen and (max-width: 380px) {
+   nav>ul a {
+      font-size: 10px;
+   }
+
+   article>div+div h3 a {
+      font-size: 18px;
+   }
+
+   .thumb {
+      width: 150px;
+      height: 150px;
+   }
+
+   .gallery img {
+      min-width: 70%;
+      max-width: 70%;
+   }
+}
+
+@media screen and (max-width: 350px) {
+   nav>a:first-of-type {
+      margin-bottom: 1.5em;
+   }
+
+   nav>ul li {
+      margin: .2em;
+   }
+
+   nav>ul a {
+      font-size: 8px;
+   }
+
+   body>article:first-of-type,
+   body>article:first-of-type:not([class=intro]) {
+      margin-top: 12em;
+   }
+
+   body>article:not([class=intro]) h1,
+   body>article:not([class=intro]) h2 {
+      font-size: 24px;
+   }
+
+   body>article:not([class=intro]) h3 {
+      font-size: 12px;
+   }
+
+   article>div+div h3 a {
+      font-size: 12px;
+   }
+}
