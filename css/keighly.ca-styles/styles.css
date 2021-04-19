@@ -1,0 +1,417 @@
+/* Imports */
+@import url("normalize.css");
+
+/* Reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/*
+    display
+  flex / position
+  overflow
+    margin / padding
+  width / height
+  border
+    color
+    font
+    animation
+*/
+
+/* Variables */
+:root {
+  /* Color Scheme */
+  --main-color: #232931;
+  --shade-color: rgb(23, 27, 30);
+  --accent-color: #4ecca3;
+  --overlay-color: rgba(34, 41, 49, 0.822);
+  --font-color: #f5f5f3;
+
+  /* Typography */
+  --main-font: "Montserrat", sans-serif;
+  /* --accent-font: */
+  --base-size: 0.79rem;
+  --type-scale: 1.125; /* Screen Sizes | L - Major 3rd - 1.25 | M - 1.2 Minor 3rd | S - 1.125 Major 2nd */
+  --h5: calc(var(--base-size) * var(--type-scale));
+  --h4: calc(var(--h5) * var(--type-scale));
+  --h3: calc(var(--h4) * var(--type-scale));
+  --h2: calc(var(--h3) * var(--type-scale));
+  --h1: calc(var(--h2) * var(--type-scale));
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+p {
+  font-size: var(--base-size);
+}
+
+body {
+  background-color: var(--main-color);
+  font-family: var(--main-font);
+  color: var(--font-color);
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 0;
+  min-height: 15vh;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: var(--shade-color);
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+nav > a:first-of-type {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+nav > ul a {
+  padding: 0 0.4em;
+  font-size: var(--base-size);
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav > ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--font-color);
+  transition: width 0.3s;
+}
+
+nav > ul li:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+body > article:first-of-type,
+body > article:first-of-type:not([class="intro"]) {
+  margin-top: 11em;
+}
+
+.intro {
+  margin: auto;
+  width: 90%;
+}
+
+.intro h1 {
+  margin-bottom: 0.3em;
+  letter-spacing: 2px;
+}
+
+.intro h2 {
+  margin-bottom: 0.3em;
+  font-size: var(--h4);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.intro h3 {
+  margin-bottom: 2em;
+  font-size: var(--h5);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.intro p {
+  margin-bottom: 0.5em;
+  letter-spacing: 1px;
+}
+
+body > article:not([class="intro"]) {
+  margin: 0 auto;
+  margin-top: 1em;
+  max-width: 80%;
+  text-align: center;
+}
+
+body > article:not([class="intro"]),
+body > article:not([class="title"]) {
+  margin-bottom: 4em;
+}
+
+body > article:not([class="intro"]) h1,
+body > article:not([class="intro"]) h2 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body > article:not([class="intro"]) h2 + h3 {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body > article:not([class="intro"]) h2 + p {
+  margin: auto;
+  margin-top: 2em;
+  letter-spacing: 1px;
+  line-height: 1.3em;
+}
+
+article > article {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  /* margin: auto; */
+  margin-top: 3em;
+  margin-bottom: 3em;
+  width: 100%;
+}
+
+article > div + div {
+  min-width: 90%;
+  /* text-align: left; */
+}
+
+article > div + div h3 a {
+  color: var(--accent-color);
+  font-size: var(--h2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+article > div + div h4 {
+  margin-top: 1em;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+article > div + div p {
+  margin-top: 1.5em;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+article > div + div a {
+  padding: 0.3em;
+  border: 2px solid var(--accent-color);
+}
+
+article > div + div h3 a:hover,
+article > div + div a:hover {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+}
+
+.thumb {
+  position: relative;
+  /* margin-left: 2em; */
+  /* margin-right: 2em; */
+  /* width: 300px; */
+  width: 150px;
+  /* height: 300px; */
+  height: 150px;
+  clip-path: polygon(50% 2%, 0% 70%, 100% 70%);
+  background: var(--font-color);
+  transition: transform 1s;
+}
+
+.thumb .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.thumb:hover .overlay {
+  display: block;
+  background: var(--overlay-color);
+}
+
+.thumb-txt {
+  margin-top: 40%;
+  border: 2px solid var(--accent-color);
+  text-transform: uppercase;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 80%;
+}
+
+.gallery img {
+  margin-bottom: 1.5em;
+  /* max-height: 30%; */
+  max-height: 70%;
+  /* max-width: 30%; */
+  max-width: 70%;
+}
+
+/* Tablet */
+@media screen and (min-width: 650px) {
+  :root {
+    --base-size: 1rem;
+    --type-scale: 1.2;
+  }
+
+  body > article:first-of-type,
+  body > article:first-of-type:not([class="intro"]) {
+    margin-top: 16em;
+  }
+
+  .intro {
+    width: 80%;
+  }
+
+  body > article:not([class="intro"]),
+  body > article:not([class="title"]) {
+    margin-bottom: 8em;
+  }
+
+  article > div + div h3 a {
+    font-size: var(--h3);
+  }
+
+  .thumb {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* Gallery */
+  .gallery img {
+    min-width: 75%;
+    max-width: 75%;
+    margin-top: 2em;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1100px) {
+  :root {
+    --base-size: 0.889rem;
+    --type-scale: 1.2;
+  }
+
+  nav {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 1em 0;
+  }
+
+  nav > a:first-of-type {
+    margin-left: 3em;
+  }
+
+  nav li {
+    margin-right: 3em;
+  }
+
+  body > article:first-of-type {
+    margin-top: 12em;
+  }
+
+  .intro {
+    margin-bottom: 70em;
+    width: 70%;
+  }
+
+  body > article:first-of-type:not([class="intro"]) {
+    margin-top: 12em;
+  }
+
+  body > article:not([class="intro"]) {
+    margin: 0 auto;
+    margin-top: 4em;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  body > article:not([class="intro"]) h2 + p {
+    width: 50%;
+    line-height: 1.5;
+  }
+
+  article > article:first-of-type {
+    margin-top: 10em;
+  }
+
+  article > div + div {
+    min-width: 50%;
+    max-width: 50%;
+    text-align: left;
+  }
+
+  article > div + div h3 a {
+    color: #4ecca3;
+  }
+
+  article > div + div h4 {
+    font-size: var(--h5);
+  }
+
+  article > div + div p {
+    margin-top: 2em;
+  }
+
+  .thumb {
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Gallery */
+  .gallery img {
+    min-width: 30%;
+    max-width: 30%;
+    margin-top: 2em;
+  }
+}
